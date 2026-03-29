@@ -222,7 +222,7 @@
 
     <script>
         const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const FLAMINGOS = ["🦩", "🦩", "🦩🦩🦩"];
+        const FLAMINGOS = ["🦩", "🦩", "🦩"];
         
         // 90+ Kuitit (lisätty hulluja flamingo-aiheisia)
         const KUITIT = [
@@ -293,11 +293,11 @@
                 const osc = audioCtx.createOscillator();
                 osc.type = 'square';
                 osc.frequency.setValueAtTime(200, now);
-                osc.frequency.linearRampToValueAtTime(50, now + 0.5);
+                osc.frequency.linearRampToValueAtTime(50, now + 0.7);
                 gain.gain.setValueAtTime(0.15, now);
-                gain.gain.linearRampToValueAtTime(0, now + 0.5);
+                gain.gain.linearRampToValueAtTime(0, now + 0.7);
                 osc.connect(gain);
-                osc.start(); osc.stop(now + 0.5);
+                osc.start(); osc.stop(now + 0.7);
             }
         }
 
@@ -319,7 +319,7 @@
             setTimeout(() => {
                 peeker.classList.remove('active');
                 bubble.classList.remove('active');
-            }, 3000);
+            }, 5000);
         }
 
         function addTowerFlamingo() {
